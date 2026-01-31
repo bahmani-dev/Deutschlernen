@@ -1,11 +1,16 @@
+import 'package:flutter_application_1/presentation/screens/onboarding_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-// import 'package:go_router/go_router.dart';
-
-
-// GoRouter appRouter(AppRouterRef ref){
-//   return GoRouter(initialLocation: '/login', 
-//   routes: [
-//     GoRoute(path: '/login', name: 'login', builder: (context, state) => ,)
-//   ]
-  
-// }
+final appRouterProvider = Provider<GoRouter>((ref) {
+  return GoRouter(
+    initialLocation: '/onboarding',
+    routes: [
+      GoRoute(
+        path: 'onboarding',
+        name: 'onboarding',
+        builder: (context, state) => OnboardingScreen(),
+      ),
+    ],
+  );
+});
